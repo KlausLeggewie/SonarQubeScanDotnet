@@ -1,0 +1,15 @@
+services:
+  sonarserver:
+    image: sonarqube
+    volumes:
+        - data:/opt/sonarqube/data
+        - logs:/opt/sonarqube/logs
+    environment:
+      SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: true 
+    ports:
+      - "9000:9000"
+    restart: always
+volumes:
+    data: #empty =  platform’s default configuration for creating a volume
+    logs: #empty =  platform’s default configuration for creating a volume
+    
