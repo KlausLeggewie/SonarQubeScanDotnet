@@ -9,7 +9,10 @@ services:
     ports:
       - "9000:9000"
     restart: always
+    networks:
+      - default
 volumes:
     data: #empty =  platform’s default configuration for creating a volume
     logs: #empty =  platform’s default configuration for creating a volume
-    
+networks:
+    default:

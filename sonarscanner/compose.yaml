@@ -1,0 +1,21 @@
+services:
+  dotnet:
+    image: mcr.microsoft.com/dotnet/sdk:6.0
+    volumes:
+        - "./dotnet-scan-build.sh:/usr/local/bin/dotnet-scan-build.sh"
+        - type: bind
+          source: ${DOTNET_SOURCE_DIR}
+          target: /src
+    env_file: .env
+    # environment variables required:
+      # SONAR_PROJECT_KEY: key of sonar project defined by sonar server
+      # SONAR_URL: base url sonar server
+      # SONAR_TOKEN: token of scan-user, defined by sonar server
+      # DOTNET_SOURCE_DIR: source directory to bind to /src
+      # DOTNET_BUILD_SOLUTION_PATH: relativ path to /src of solution or project
+    # command: sh -c "/usr/local/bin/dotnet-scan-build.sh"
+    entrypoint: sh -c "/usr/local/bin/dotnet-scan-build.sh"
+
+networks: # for local sonarserver: connect to existing network (=> networking between containers)
+  default:
+    name: sonarserver_default
