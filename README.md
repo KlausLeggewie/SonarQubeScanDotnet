@@ -26,9 +26,12 @@ The Sonar Scanner for .NET  runs locally and is installed in a .NET 6.0 SDK dock
 Installation follows https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-msbuild/ .
 
 All configurations are done in the .env file:
-* SONAR_PROJECT_KEY: key of sonar project defined by sonar server
-* SONAR_URL: base url sonar server
-* SONAR_TOKEN: token of scan-user, defined by sonar server
+* SONAR_PROJECT_KEY: key of sonar project defined by Sonar Server
+* SONAR_URL: base url Sonar Server; find the IP address for the local Sonar Server:
+
+        docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' sonarserver-sonarserver-1
+
+* SONAR_TOKEN: token of scan-user, defined by Sonar Server
 * DOTNET_SOURCE_DIR: local source directory, will be bound to /src
 * DOTNET_BUILD_SOLUTION_PATH: path of solution or project, relative to /src
 
