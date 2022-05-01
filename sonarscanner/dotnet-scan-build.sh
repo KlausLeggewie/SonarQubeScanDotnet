@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "** started dotnet-scan-build"
 
 DOTNET_BUILD_SOLUTION_PATH="/src/"${DOTNET_BUILD_SOLUTION_PATH}
