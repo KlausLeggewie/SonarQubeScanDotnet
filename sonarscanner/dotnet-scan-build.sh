@@ -10,7 +10,7 @@ echo ${DOTNET_BUILD_SOLUTION_PATH}
 
 echo "** install dotnet scanner"
 export LC_ALL=C.UTF-8
-dotnet tool install --global dotnet-sonarscanner --version 5.5.3
+dotnet tool install --global dotnet-sonarscanner --version 5.6.0
 dotnet tool install --global dotnet-reportgenerator-globaltool
 export PATH="$PATH:/root/.dotnet/tools"
 apt update && apt install -yyq openjdk-11-jre
