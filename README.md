@@ -39,3 +39,9 @@ In the sonarscanner directory execute:
 ```bash
 docker compose run dotnet
 ```
+
+### Troubleshooting
+
+| Error | Solution |
+| ----- | -------- |
+| "sh: 1: /usr/local/bin/dotnet-scan-build.sh: not found" | ensure that all files are stored with Unix line-endings (LF) |
