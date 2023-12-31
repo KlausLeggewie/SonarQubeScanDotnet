@@ -1,6 +1,7 @@
+version: "3"
 services:
   sonarserver:
-    image: sonarqube
+    image: sonarqube:lts-community
     volumes:
         - data:/opt/sonarqube/data
         - logs:/opt/sonarqube/logs

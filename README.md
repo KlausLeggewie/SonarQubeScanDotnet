@@ -20,6 +20,8 @@ Next:
 2. Create a new project => the project key will be required later on
 3. Generate a login token => will be required later on
 
+_This setup uses an embedded database and should be used for evaluation purposes only!_
+
 ## Sonar Scanner for .NET
 
 The Sonar Scanner for .NET  runs locally and is installed in a .NET 6.0 SDK docker image.
