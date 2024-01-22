@@ -10,10 +10,13 @@ echo ${DOTNET_BUILD_SOLUTION_PATH}
 
 echo "** install dotnet scanner"
 export LC_ALL=C.UTF-8
-dotnet tool install --global dotnet-sonarscanner --version 5.6.0
+dotnet tool install --global dotnet-sonarscanner --version 6.0.0
 dotnet tool install --global dotnet-reportgenerator-globaltool
 export PATH="$PATH:/root/.dotnet/tools"
-apt update && apt install -yyq openjdk-11-jre
+echo "** update packages"
+apt update
+echo "** install java (required for sonarscanner)"
+apt install -yyq openjdk-17-jre
 echo "** dotnet sonarscanner begin"
 dotnet sonarscanner begin /k:${SONAR_PROJECT_KEY} /d:sonar.host.url=${SONAR_URL} /d:sonar.login=${SONAR_TOKEN}
 echo "** dotnet build"

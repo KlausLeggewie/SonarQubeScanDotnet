@@ -1,6 +1,6 @@
 services:
   dotnet:
-    image: mcr.microsoft.com/dotnet/sdk:6.0
+    image: mcr.microsoft.com/dotnet/sdk:8.0
     volumes:
         - "./dotnet-scan-build.sh:/usr/local/bin/dotnet-scan-build.sh"
         - type: bind
