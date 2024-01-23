@@ -3,8 +3,8 @@ services:
   sonarserver:
     image: sonarqube:lts-community
     volumes:
-        - data:/opt/sonarqube/data
-        - logs:/opt/sonarqube/logs
+        - sonarqube_data:/opt/sonarqube/data
+        - sonarqube_logs:/opt/sonarqube/logs
     environment:
       SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: true 
     ports:
@@ -13,7 +13,7 @@ services:
     networks:
       - default
 volumes:
-    data: #empty =  platform’s default configuration for creating a volume
-    logs: #empty =  platform’s default configuration for creating a volume
+    sonarqube_data: #empty =  platform’s default configuration for creating a volume
+    sonarqube_logs: #empty =  platform’s default configuration for creating a volume
 networks:
     default:

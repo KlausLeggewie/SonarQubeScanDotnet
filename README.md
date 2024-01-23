@@ -18,7 +18,9 @@ Server will be up at http://localhost:9000
 Next: 
 1. Login (admin, admin), change password
 2. Create a new project => the project key will be required later on
-3. Generate a login token => will be required later on
+3. Generate a login token => will be required later on  
+        a. Create user for scan (Adminstration / Security / Users)  
+        b. Create token for this user ("Tokens" column for user)
 
 _This setup uses an embedded database and should be used for evaluation purposes only!_
 
@@ -47,3 +49,4 @@ docker compose run dotnet
 | Error | Solution |
 | ----- | -------- |
 | "sh: 1: /usr/local/bin/dotnet-scan-build.sh: not found" | ensure that all files are stored with Unix line-endings (LF) |
+| "SonarQube analysis could not be completed because the analysis configuration file could not be found: /.sonarqube/conf/SonarQubeAnalysisConfig.xml." | Project Key or IP address resp. URL in .env file may be incorrect |
