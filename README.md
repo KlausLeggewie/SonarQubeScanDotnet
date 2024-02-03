@@ -11,7 +11,7 @@ The first step is to set up Sonar Server. The server is responsible for storing 
 
 In the sonarserver directory execute:
 ```bash
-docker compose up
+docker compose up --detach
 ```
 Server will be up at http://localhost:9000
 
